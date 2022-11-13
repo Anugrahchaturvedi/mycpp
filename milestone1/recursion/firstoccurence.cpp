@@ -24,4 +24,4 @@ int main()
    cout << firstoccurence(arr,size,x);
     return 0;
 
-}
+} 
