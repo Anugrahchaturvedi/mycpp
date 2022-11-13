@@ -1,28 +1,24 @@
 
 #include<iostream>
+#include<math.h>
 using namespace std;
 
 
-int countzeros(int n)
+double gp( double n)
 {
-
-    if((n>=1)&&(n<=9))
-    return 0;
     if(n==0)
     return 1;
+    float small= gp(n-1);
+    return small + pow(0.5,n);
 
-    int ans = countzeros(n/10);
-    if(n%10==0)
-        return ans +1;
-        else
-    return ans;
+
 }
 
 int main()
 { 
     int n;
     cin>>n;
-    cout << countzeros(n);
+   cout <<gp(n);
     return 0;
 
 } 
