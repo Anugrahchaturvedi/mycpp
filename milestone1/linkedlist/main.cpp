@@ -38,6 +38,27 @@ node * takeinput(){
         cin>>data;
     }
 }
+
+
+node * takeinputbetter(){
+    int data;
+    cin>>data;
+    node* head=NULL;
+    node* tail=NULL;
+    while(data!=-1){
+        node * temp=new node(data);
+        if(head==NULL)
+        {
+            head=temp;
+            tail=temp;
+        }
+        else {
+            tail->next=temp;
+            tail=temp;
+        }
+        cin>>data;
+    }
+}
 int  main()
 {
 
@@ -59,5 +80,6 @@ node * head2=n3;
 // cout << n3->data << " " << n4->data;
 
 print(head2);
-takeinput();
+// takeinput();
+takeinputbetter();
 }
