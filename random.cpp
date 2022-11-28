@@ -1,13 +1,21 @@
-#include<string.h>
-#include<iostream>
-using namespace std;
 
+#include<bits/stdc++.h>
+using namespace std;
 
 int main()
 {
-    string s= "anugrah";
-    // s.replace(0,1,'u');
-       string str1 = s.substr(0).replace(0, 1, "u");
-    cout << str1 << endl ;
+    vector<int>v;
+    int c;
+    cin>>c;
+    for (int i = 0; i < c; i++)
+    {
+            int x;
+            cin>>x;
+            v.push_back(x);
+
+    
+    }
+    cout << v.size();
+    
     return 0;
 }

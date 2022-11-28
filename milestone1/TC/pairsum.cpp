@@ -34,6 +34,7 @@ int main()
     {
         int x;cin>>x;
         v.push_back(x);
+        
     }
     int num;
     cin>>num;
