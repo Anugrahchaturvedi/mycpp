@@ -3,6 +3,36 @@
 #include"tree.h"
 using namespace std;
 
+
+void printlevelwise(treeNodes<int>* root){
+    if(root==NULL)
+    return ;
+    queue<treeNodes<int>*> q;
+    q.push(root);
+    while (q.size()>0)
+    {
+       
+      treeNodes<int>* node=q.front();
+        cout<<node->data<<":";
+        q.pop();
+    
+      if(node->children.size()>0){
+        int i;
+        for (i = 0 ; i< node->children.size()-1; i++)
+        {
+            cout << node->children[i]->data << "," ;
+            q.push(node->children[i]);
+        }
+          cout<<node->children[i]->data;
+            q.push(node->children[i]);
+    }
+    cout << endl;
+    }
+}
+
+
+
+
 treeNodes<int>* takeinputlevelwise(){
     int rootData;
     cout << "Enter data" <<endl;
@@ -77,6 +107,7 @@ int main(){
 
     // treeNodes<int>* root = takeInput();
     treeNodes<int> * root=takeinputlevelwise();
-    printTree(root);
+    // printTree(root);
+    printlevelwise(root);
 }
 
