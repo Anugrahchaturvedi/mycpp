@@ -7,7 +7,7 @@ treeNodes<int>* takeinputlevelwise(){
     cout << "Enter data" <<endl;
     cin>>rootData;
     treeNodes<int>* root=new treeNodes<int>(rootData);
-    queue<treeNodes<int>*> pendingNodes;
+    queue<treeNodes<int>*> pendingNodes; //queue
     pendingNodes.push(root); //phle root push kia
     while(pendingNodes.size()!=0){
         treeNodes<int>* front=pendingNodes.front();
