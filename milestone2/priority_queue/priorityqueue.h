@@ -1,4 +1,5 @@
-#include<bits/stdc++.h>
+#include<vector>
+using namespace std;
 
 class priorityQueue{
 vector<int> pq;
@@ -38,6 +39,42 @@ void insert(int element){
 
     childIndex=parentIndex;
     }
+}
+
+int removemin(){
+    if(isempty())
+    return 0 ;
+    int ans=pq[0];
+    pq[0]=pq[pq.size()-1];
+    pq.pop_back();
+
+
+    //down-heapify
+    int parent=0;
+    int leftChild=(2* parent)+1;
+    int rightChild=(2* parent)+2;
+    while(leftChild<pq.size()){
+        int minIndex=parent;
+        if(pq[minIndex] > pq[leftChild]){
+            minIndex=leftChild;
+        }
+         if( rightChild<pq.size() &&  pq[minIndex] > pq[rightChild]){
+            minIndex=rightChild;
+        }
+        if(parent==minIndex)
+        break;
+        int temp=pq[minIndex];
+        pq[minIndex]=pq[parent];
+        pq[parent]=temp;
+
+        parent=minIndex;
+        int leftChild=(2* parent)+1;
+        int rightChild=(2* parent)+2;
+return ans;
+
+    }
+
+
 }
 
 };
